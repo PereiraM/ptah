@@ -1,6 +1,6 @@
 import sys
 
-from flask import Flask, render_template
+from flask import Flask, render_template, abort
 from flask_flatpages import FlatPages
 from flask_frozen import Freezer
 
@@ -12,6 +12,16 @@ app = Flask(__name__)
 app.config.from_object(__name__)
 pages = FlatPages(app)
 freezer = Freezer(app)
+
+@app.route('/public/<path:file>')
+def public(file):
+  file = 'public/' + file
+  try:
+    f = open(file)
+  except IOError, e:
+    abort(404)
+    return
+  return f.read()
 
 @app.route("/")
 def index():
