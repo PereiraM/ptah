@@ -13,16 +13,6 @@ app.config.from_object(__name__)
 pages = FlatPages(app)
 freezer = Freezer(app)
 
-@app.route('/public/<path:file>')
-def public(file):
-  file = 'public/' + file
-  try:
-    f = open(file)
-  except IOError, e:
-    abort(404)
-    return
-  return f.read()
-
 @app.route("/")
 def index():
   return render_template('index.html', pages=pages)
