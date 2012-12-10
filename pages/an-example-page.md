@@ -1,6 +1,9 @@
 title: An Example Page
 date: 2012-03-04
 tags: [general, example]
+author: Me!
+description: an example page with metadata
+keywords: [awesome, page, with, metadata]
 
 This page lives in /pages/an-example-page.md
 
