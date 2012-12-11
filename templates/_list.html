@@ -5,7 +5,7 @@
   {% if page.meta.tags|length %}
     | Tagged:
     {% for page_tag in page.meta.tags %}
-      <a href="{{ url_for("tag", tag=page_tag) }}">{{ page_tag }}</a>
+      <a href="{{ url_for("tag", tag=page_tag) }}">{{ page_tag }}</a>&nbsp;
     {% endfor %}
   {% endif %}
   </li>

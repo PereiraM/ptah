@@ -9,11 +9,11 @@ Original inspiration by Nicolas Perriault, on his [blog](https://nicolas.perriau
 
 Requirements
 ------------
-python
-flask
-flask-flatpages
-flask-assets
-frozenflask
-jsmin
-cssmin
-
+  - python
+  - Flask
+  - Flask-FlatPages
+  - Flask-Assets
+  - Frozen-Flask
+  - jsmin
+  - cssmin
+  - django-htmlmin

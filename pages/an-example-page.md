@@ -9,7 +9,7 @@ This page lives in /pages/an-example-page.md
 
 Your content here.
 
-Linking to a file: [hello.txt]({{ url_for('static', filename='hello.txt') }}).
+Linking to a file: [hello.txt](/static/hello.txt).
 
 Now some [Malevole Lorem Ipsum](http://www.malevole.com/mv/misc/text/):
 

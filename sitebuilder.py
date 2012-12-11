@@ -4,6 +4,7 @@ from flask import Flask, render_template, abort
 from flask_flatpages import FlatPages
 from flask_frozen import Freezer
 from flask.ext.assets import Environment
+from htmlmin.minify import html_minify
 
 DEBUG = True
 FLATPAGES_AUTO_RELOAD = DEBUG
@@ -17,17 +18,17 @@ assets = Environment(app)
 
 @app.route("/")
 def index():
-  return render_template('index.html', pages=pages)
+  return html_minify(render_template('index.html', pages=pages))
 
 @app.route('/tag/<string:tag>/')
 def tag(tag):
   tagged = [p for p in pages if tag in p.meta.get('tags', [])]
-  return render_template('tag.html', pages=tagged, tag=tag)
+  return html_minify(render_template('tag.html', pages=tagged, tag=tag))
 
 @app.route('/<path:path>/')
 def page(path):
   page = pages.get_or_404(path)
-  return render_template('page.html', page=page)
+  return html_minify(render_template('page.html', page=page))
 
 if __name__ == "__main__":
   if len(sys.argv) > 1 and sys.argv[1] == "build":
