@@ -7,4 +7,13 @@ Attributions
 ------------
 Original inspiration by Nicolas Perriault, on his [blog](https://nicolas.perriault.net/code/2012/dead-easy-yet-powerful-static-website-generator-with-flask/)
 
+Requirements
+------------
+python
+flask
+flask-flatpages
+flask-assets
+frozenflask
+jsmin
+cssmin
 
