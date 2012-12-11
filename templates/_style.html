@@ -1,2 +1,5 @@
 {# include your stylesheets below #}
-<link href="{{ url_for("static", filename="assets/style.css") }}" media="all" rel="stylesheet" type="text/css" />
+{% assets filters="cssmin", output="assets/packed.css",
+          "assets/css/style.css" %}
+    <link href="{{ ASSET_URL }}" media="all" rel="stylesheet" type="text/css" />
+{% endassets %}

@@ -3,6 +3,7 @@ import sys
 from flask import Flask, render_template, abort
 from flask_flatpages import FlatPages
 from flask_frozen import Freezer
+from flask.ext.assets import Environment
 
 DEBUG = True
 FLATPAGES_AUTO_RELOAD = DEBUG
@@ -12,6 +13,7 @@ app = Flask(__name__)
 app.config.from_object(__name__)
 pages = FlatPages(app)
 freezer = Freezer(app)
+assets = Environment(app)
 
 @app.route("/")
 def index():
