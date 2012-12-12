@@ -33,8 +33,8 @@ Using
 
 License
 -------
-Murky.  But I'd say use it for personal use?  I'm not sure what Nicolas 
-Perriault's license on his code is.
+[CC BY-SA 3.0](http://creativecommons.org/licenses/by-sa/3.0/), as per
+the original code in Nicolas Perriault's blog.
 
 Customizing
 -----------
