@@ -24,7 +24,7 @@ Using
   1. Install all the requirements on your client
     `pip install Flask Flask-FlatPages Flask-Assets Frozen-Flask jsmin cssmin django-htmlmin`
   2. Clone this repo
-    `git clone http://github.com/gatesphere/ptah
+    `git clone http://github.com/gatesphere/ptah`
   3. Customize - see below.
   4. Preview
     `python sitebuilder.py`
@@ -90,11 +90,11 @@ before `if __name__ == '__main__':`:
       
 And then this in `templates/placeholder.html`:
 
-  {% extends "base.html" %}
-  {% block content %}
-  <h1>placeholder</h1>
-  <p>This page hasn't been created yet.</p>
-  {% endblock content %}
+    {% extends "base.html" %}
+    {% block content %}
+    <h1>placeholder</h1>
+    <p>This page hasn't been created yet.</p>
+    {% endblock content %}
 
 And when you do a build, it will render a placeholder page wherever
 your real page will be when you get around to it.
