@@ -1,4 +1,4 @@
-import sys
+import sys, shutil
 
 from flask import Flask, render_template, abort
 from flask_flatpages import FlatPages
@@ -9,6 +9,8 @@ from htmlmin.minify import html_minify
 DEBUG = True
 FLATPAGES_AUTO_RELOAD = DEBUG
 FLATPAGES_EXTENSION = '.md'
+
+BASE_URL = 'http://www.example.com'
 
 app = Flask(__name__)
 app.config.from_object(__name__)
@@ -33,6 +35,7 @@ def page(path):
 if __name__ == "__main__":
   if len(sys.argv) > 1 and sys.argv[1] == "build":
     freezer.freeze()
+    shutil.rmtree('build/static/.webassets-cache')
   else:
     app.run(port=8000)
 
