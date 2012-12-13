@@ -98,3 +98,27 @@ And then this in `templates/placeholder.html`:
 
 And when you do a build, it will render a placeholder page wherever
 your real page will be when you get around to it.
+
+### Navigation breadcrumbs
+If you'd like to have those fancy navigation breadcrumbs, you can add
+[bread.py](https://bitbucket.org/russellballestrini/bread/) to your 
+directory, and then do the following modifications:
+
+In `sitebuilder.py`:
+  
+Add `from bread import Bread` to your imports up top.
+
+Change the definition of `page` to look like this:
+
+    @app.route('/<path:path>/')
+    def page(path):
+      page = pages.get_or_404(path)
+      bread = Bread(app.config['BASE_URL'] + '/' + path)
+      return html_minify(render_template('page.html', page=page, bread=bread))
+
+And then in your `templates/page.html`, add this line where you'd like 
+the breadcrumbs to show up:
+
+    {{ bread.links|join(" :: ")|safe }}
+    
+You can style those links with the css classs `breadcrumbs` if you'd like.
