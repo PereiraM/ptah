@@ -17,6 +17,7 @@ app.config.from_object(__name__)
 pages = FlatPages(app)
 freezer = Freezer(app)
 assets = Environment(app)
+assets.url_expire = False
 
 @app.route("/")
 def index():
