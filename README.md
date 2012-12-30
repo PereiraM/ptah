@@ -122,3 +122,18 @@ the breadcrumbs to show up:
     {{ bread.links|join(" :: ")|safe }}
     
 You can style those links with the css classs `breadcrumbs` if you'd like.
+
+### favicon.ico support
+You can get a favicon by specifying a path in your `sitebuilder.py` file:
+
+Be sure to `from flask import redirect, url_for` up at the top.
+
+Then, add the following path definition after the `def index()` function:
+
+    ## favicon support
+    @app.route('/favicon.ico')
+    def favicon():
+      return redirect(url_for('static', filename='assets/img/favicon.ico'))
+      
+Finally, drop your favicon as `favicon.ico` in `static/assets/img`.  
+You're golden.
