@@ -4,7 +4,6 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
 {% block meta %}
   {% if page %}
     {% with page = page %}
@@ -17,31 +16,32 @@
   {% include "_js_head.html" %}
 
 {% block title %}
-  <title>some title</title>
+    <title>
+  {% if page %}
+    {% if page.meta.title %}
+      {{ page.meta.title }}
+    {% endif %}
+  {% endif %}
+    | monkeycycle
+    </title>
 {% endblock title %}
+
 
 </head>
 <body>
   <div class="container">
-
 {% block header %}
   {% include "_header.html" %}
 {% endblock header %}
-
 {% block content %}
   <p>some content</p>
 {% endblock content %}
-
 {% block footer %}
   {% include "_footer.html" %}
 {% endblock footer %}
+  </div>
 
-    </div>
-    <!-- container -->
-
-<!-- GIVING ERRORS -->
-{ % include "_js_foot.html" % }
-<!-- GIVING ERRORS -->
-
+  {% include "_js_foot.html" %}
 </body>
 </html>
+
