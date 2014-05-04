@@ -10,7 +10,7 @@ DEBUG = True
 FLATPAGES_AUTO_RELOAD = DEBUG
 FLATPAGES_EXTENSION = '.md'
 
-BASE_URL = 'http://www.example.com'
+BASE_URL = 'http://www.monkeycycle.org'
 
 app = Flask(__name__)
 app.config.from_object(__name__)
@@ -21,17 +21,21 @@ assets.url_expire = False
 
 @app.route("/")
 def index():
-  return html_minify(render_template('index.html', pages=pages))
+  return render_template('index.html', pages=pages)
+  # return html_minify(render_template('index.html', pages=pages))
 
 @app.route('/tag/<string:tag>/')
 def tag(tag):
   tagged = [p for p in pages if tag in p.meta.get('tags', [])]
-  return html_minify(render_template('tag.html', pages=tagged, tag=tag))
+  return render_template('tag.html', pages=tagged, tag=tag)
+  # return html_minify(render_template('tag.html', pages=tagged, tag=tag))
+
 
 @app.route('/<path:path>/')
 def page(path):
   page = pages.get_or_404(path)
-  return html_minify(render_template('page.html', page=page))
+  return render_template('page.html', page=page)
+  # return html_minify(render_template('page.html', page=page))
 
 if __name__ == "__main__":
   if len(sys.argv) > 1 and sys.argv[1] == "build":

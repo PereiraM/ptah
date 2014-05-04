@@ -1,5 +1,5 @@
 {# include your stylesheets below #}
-{% assets filters="cssmin", output="assets/css/packed.css",
+{% assets filters="cssmin", output="assets/css/minified.css",
           "assets/css/vendor/normalize.css", "assets/css/vendor/foundation/foundation.css", "assets/css/style.css" %}
     <link href="{{ ASSET_URL }}" media="all" rel="stylesheet" type="text/css" />
 {% endassets %}

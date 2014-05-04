@@ -13,16 +13,16 @@
   {% endif %}
 {% endblock meta %}
 
-  {% include "_style.html" %}
-  {% include "_js_head.html" %}
+{% include "_style.html" %}
+{% include "_js_head.html" %}
 
 {% block title %}
-  <title>some title</title>
+  <title>some title | monkeycycle</title>
 {% endblock title %}
 
-</head>
-<body>
-  <div class="container">
+    </head>
+    <body>
+        <div class="container">
 
 {% block header %}
   {% include "_header.html" %}
@@ -36,12 +36,12 @@
   {% include "_footer.html" %}
 {% endblock footer %}
 
-    </div>
-    <!-- container -->
+        </div>
+        <!-- container -->
 
 <!-- GIVING ERRORS -->
-{ % include "_js_foot.html" % }
+{% include "_js_foot.html" %}
 <!-- GIVING ERRORS -->
 
-</body>
+    </body>
 </html>
