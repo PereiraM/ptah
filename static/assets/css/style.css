@@ -1,0 +1,19 @@
+/* A generic CSS stylesheet */
+body {
+  background-color: #c2c2c2;
+  color: #333;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+.container {
+  background-color: #fff;
+  width: 90%%;
+  max-width: 1200px;
+  padding: 30px;
+  margin: 40px auto;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+}
